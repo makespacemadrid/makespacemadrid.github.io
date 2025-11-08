@@ -14,7 +14,6 @@ function initCarouselMarquee() {
         displayDuration: 4000,
         autoplayTimeoutId: null,
         isPaused: false,
-        motionMedia: window.matchMedia('(prefers-reduced-motion: reduce)'),
         transitionFallbackId: null,
         pendingTransition: false,
         transitionDuration: 800
@@ -129,7 +128,7 @@ function initCarouselMarquee() {
 
     function scheduleNext() {
         clearAutoplay();
-        if (state.isPaused || state.motionMedia.matches) {
+        if (state.isPaused) {
             return;
         }
 
@@ -237,20 +236,6 @@ function initCarouselMarquee() {
         }
     });
 
-    const handleMotionPreferenceChange = (event) => {
-        if (event.matches) {
-            pauseAutoplay();
-        } else {
-            resumeAutoplay();
-        }
-    };
-
-    if (typeof state.motionMedia.addEventListener === 'function') {
-        state.motionMedia.addEventListener('change', handleMotionPreferenceChange);
-    } else if (typeof state.motionMedia.addListener === 'function') {
-        state.motionMedia.addListener(handleMotionPreferenceChange);
-    }
-
     track.carouselController = {
         next: moveToNext,
         prev: moveToPrev,
@@ -269,7 +254,7 @@ function initCarouselMarquee() {
         recalc: () => setTransform(false)
     };
 
-    state.isPaused = state.motionMedia.matches;
+    state.isPaused = false;
     state.currentIndex = 1;
     setTransform(false);
     scheduleNext();
