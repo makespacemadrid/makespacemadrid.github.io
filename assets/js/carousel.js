@@ -1,7 +1,3 @@
-// Makespace Madrid Website JavaScript
-// Simple and hackable JavaScript for interactive features
-
-// Carousel functionality - very hackable!
 function initCarouselMarquee() {
     const track = document.querySelector('.carousel-track');
     if (!track || track.dataset.sliderInitialized === 'true') {
@@ -18,7 +14,10 @@ function initCarouselMarquee() {
         displayDuration: 4000,
         autoplayTimeoutId: null,
         isPaused: false,
-        motionMedia: window.matchMedia('(prefers-reduced-motion: reduce)')
+        motionMedia: window.matchMedia('(prefers-reduced-motion: reduce)'),
+        transitionFallbackId: null,
+        pendingTransition: false,
+        transitionDuration: 800
     };
 
     const firstClone = originalSlides[0].cloneNode(true);
@@ -36,10 +35,66 @@ function initCarouselMarquee() {
         return Array.from(track.children);
     }
 
+    function parseDurationValue(rawValue) {
+        if (!rawValue) {
+            return Number.NaN;
+        }
+
+        const parts = rawValue
+            .split(',')
+            .map((part) => part.trim())
+            .filter(Boolean);
+
+        for (const part of parts) {
+            if (part.endsWith('ms')) {
+                const numeric = parseFloat(part);
+                if (!Number.isNaN(numeric)) {
+                    return numeric;
+                }
+            } else if (part.endsWith('s')) {
+                const numeric = parseFloat(part);
+                if (!Number.isNaN(numeric)) {
+                    return numeric * 1000;
+                }
+            } else {
+                const numeric = parseFloat(part);
+                if (!Number.isNaN(numeric)) {
+                    return numeric * 1000;
+                }
+            }
+        }
+
+        return Number.NaN;
+    }
+
+    function getTransitionDurationMs(element) {
+        try {
+            const computedStyle = window.getComputedStyle(element);
+            const cssDuration = parseDurationValue(computedStyle.transitionDuration);
+            if (!Number.isNaN(cssDuration)) {
+                return cssDuration;
+            }
+
+            const variableDuration = parseDurationValue(
+                computedStyle.getPropertyValue('--carousel-transition-duration')
+            );
+            if (!Number.isNaN(variableDuration)) {
+                return variableDuration;
+            }
+        } catch (error) {
+            // If getComputedStyle fails we silently fall back to default duration.
+        }
+
+        return 800;
+    }
+
     function getSlideWidth() {
         const referenceSlide = track.querySelector('.carousel-image');
         if (referenceSlide) {
-            return referenceSlide.getBoundingClientRect().width;
+            const width = referenceSlide.getBoundingClientRect().width;
+            if (width > 0) {
+                return width;
+            }
         }
 
         const parent = track.parentElement;
@@ -51,6 +106,25 @@ function initCarouselMarquee() {
             window.clearTimeout(state.autoplayTimeoutId);
             state.autoplayTimeoutId = null;
         }
+    }
+
+    function clearTransitionFallback() {
+        if (state.transitionFallbackId) {
+            window.clearTimeout(state.transitionFallbackId);
+            state.transitionFallbackId = null;
+        }
+    }
+
+    function scheduleTransitionFallback() {
+        clearTransitionFallback();
+
+        state.transitionDuration = getTransitionDurationMs(track);
+
+        const fallbackDelay = Math.max(state.transitionDuration, 50) + 50;
+        state.transitionFallbackId = window.setTimeout(() => {
+            state.transitionFallbackId = null;
+            finalizeTransition();
+        }, fallbackDelay);
     }
 
     function scheduleNext() {
@@ -69,9 +143,13 @@ function initCarouselMarquee() {
         const offset = -state.currentIndex * slideWidth;
 
         if (!useTransition) {
+            state.pendingTransition = false;
+            clearTransitionFallback();
             track.classList.add('no-transition');
         } else {
             track.classList.remove('no-transition');
+            state.pendingTransition = true;
+            scheduleTransitionFallback();
         }
 
         track.style.transform = `translateX(${offset}px)`;
@@ -104,28 +182,51 @@ function initCarouselMarquee() {
 
     const handleResize = () => {
         setTransform(false);
+        state.transitionDuration = getTransitionDurationMs(track);
     };
 
-    track.addEventListener('transitionend', (event) => {
-        if (event.target !== track || event.propertyName !== 'transform') {
+    function finalizeTransition(event) {
+        if (event) {
+            if (event.target !== track) {
+                return;
+            }
+
+            if (event.propertyName && !event.propertyName.toLowerCase().includes('transform')) {
+                return;
+            }
+        }
+
+        if (!state.pendingTransition) {
             return;
         }
 
+        state.pendingTransition = false;
+        clearTransitionFallback();
+
         const slides = getSlides();
 
-        if (state.currentIndex === slides.length - 1) {
+        if (state.currentIndex >= slides.length - 1) {
             state.currentIndex = 1;
             setTransform(false);
-        } else if (state.currentIndex === 0) {
+        } else if (state.currentIndex <= 0) {
             state.currentIndex = slides.length - 2;
             setTransform(false);
         }
 
         scheduleNext();
+    }
+
+    state.transitionDuration = getTransitionDurationMs(track);
+
+    ['transitionend', 'webkitTransitionEnd'].forEach((eventName) => {
+        track.addEventListener(eventName, finalizeTransition);
     });
 
     track.addEventListener('mouseenter', pauseAutoplay);
     track.addEventListener('mouseleave', resumeAutoplay);
+    track.addEventListener('touchstart', pauseAutoplay, false);
+    track.addEventListener('touchend', resumeAutoplay);
+    track.addEventListener('touchcancel', resumeAutoplay);
     window.addEventListener('resize', handleResize);
 
     document.addEventListener('visibilitychange', () => {
