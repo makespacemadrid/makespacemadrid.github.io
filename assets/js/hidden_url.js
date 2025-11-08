@@ -6,7 +6,7 @@ function sendEmail() {
 }
 
 function openTelegramLink() {
-    const x = '';
+    const x = 'makespacemadridorg';
     const telegramUrl = `https://t.me/${x}`;
     window.open(telegramUrl, '_blank');
 }
