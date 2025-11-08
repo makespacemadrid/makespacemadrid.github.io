@@ -120,20 +120,6 @@ h2::after {
     transition: none !important;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .carousel-track {
-        transition: none;
-    }
-
-    .carousel-image {
-        transition: none;
-    }
-
-    .carousel-image:hover {
-        transform: none;
-    }
-}
-
 /* Footer */
 footer {
     color: var(--secondary-color);
