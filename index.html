@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta name="description"
         content="Makespace Madrid es un espacio colaborativo para makers, hackers y creativos tecnológicos en Madrid.">
+    <link rel="stylesheet" href="assets/css/splide.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -33,21 +34,45 @@
                     <br>
                     (Metro: Tetuán)
                 </div>
-                <div class="carousel-marquee" aria-label="Fotografías del Makespace Madrid">
-                    <div class="carousel-track">
-                        <img src="assets/images/photos/taller1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/taller2.JPG" class="carousel-image">
-                        <img src="assets/images/photos/electronica1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/3d1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/3d2.JPG" class="carousel-image">
-                        <img src="assets/images/photos/3d3.JPG" class="carousel-image">
-                        <img src="assets/images/photos/3d4.JPG" class="carousel-image">
-                        <img src="assets/images/photos/cnc1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/laser1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/laser2.JPG" class="carousel-image">
-                        <img src="assets/images/photos/laser3.JPG" class="carousel-image">
+                <section class="splide" aria-label="Fotografías del Makespace Madrid">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/taller1.JPG" alt="Taller 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/taller2.JPG" alt="Taller 2">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/electronica1.JPG" alt="Electrónica 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/3d1.JPG" alt="Impresora 3D 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/3d2.JPG" alt="Impresora 3D 2">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/3d3.JPG" alt="Impresora 3D 3">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/3d4.JPG" alt="Impresora 3D 4">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/cnc1.JPG" alt="CNC 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/laser1.JPG" alt="Láser 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/laser2.JPG" alt="Láser 2">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/laser3.JPG" alt="Láser 3">
+                            </li>
+                        </ul>
                     </div>
-                </div>
+                </section>
             </div>
         </section>
         <section>
@@ -131,8 +156,25 @@
     <footer>
         <p>&copy; 2025 Makespace Madrid.</p>
     </footer>
-    <script src="assets/js/carousel.js" defer></script>
-        <script src="assets/js/hidden_url.js" defer></script>
+    <script src="assets/js/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Splide('.splide', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 4000,
+                pauseOnHover: true,
+                pauseOnFocus: true,
+                arrows: true,
+                pagination: true,
+                speed: 800,
+                drag: true,
+                keyboard: true
+            }).mount();
+        });
+    </script>
+    <script src="assets/js/hidden_url.js" defer></script>
 
 </body>
 
