@@ -95,11 +95,32 @@ h2::after {
     overflow: hidden;
 }
 
+.splide__slide {
+    position: relative;
+}
+
 .splide__slide img {
     width: 100%;
     height: auto;
     object-fit: contain;
     display: block;
+}
+
+/* Slide caption overlay */
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem 2rem;
+    margin: 1.5rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Customize Splide arrows */
@@ -123,6 +144,14 @@ h2::after {
 
 .splide__pagination__page.is-active {
     background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .slide-caption {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        margin: 1rem;
+    }
 }
 
 /* Footer */
