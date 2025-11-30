@@ -97,6 +97,7 @@ h2::after {
 
 .splide__slide {
     position: relative;
+    overflow: hidden;
 }
 
 .splide__slide img {
@@ -104,6 +105,11 @@ h2::after {
     height: auto;
     object-fit: contain;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.splide:hover .splide__slide img {
+    transform: scale(1.05);
 }
 
 /* Slide caption overlay */
