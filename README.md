@@ -33,7 +33,13 @@ La rama `main` está protegida. **Siempre hay que crear una Pull Request (PR)** 
    git checkout -b nombre-de-tu-rama
    ```
 
-3. Haz tus cambios y pruébalos localmente abriendo el archivo `index.html`.
+3. Haz tus cambios y pruébalos localmente abriendo el archivo `index.html`, o aún mejor con:
+
+```sh
+python3 -m http.server 8000
+```
+
+y después abriendo [http://localhost:8000](http://localhost:8000).
 
 4. Sube los cambios:
    ```bash
