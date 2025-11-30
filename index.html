@@ -62,7 +62,7 @@
                                 <img src="assets/images/photos/3d1.JPG" alt="Impresora 3D 1">
                                 <div class="slide-caption">
                                     <div class="slide-title">Impresoras 3D de filamento</div>
-                                    <div class="slide-description">Trae tu filamento e imprime!</div>
+                                    <div class="slide-description">¡Trae tu filamento e imprime!</div>
                                 </div>
                             </li>
                             <!-- <li class="splide__slide">
@@ -268,61 +268,10 @@
 
     </main>
     <footer>
-        <p>&copy; 2025 Makespace Madrid.</p>
+        <p>&copy; <span id="copyright-year">2025</span> Makespace Madrid.</p>
     </footer>
     <script src="assets/js/splide.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            new Splide('.splide', {
-                type: 'loop',
-                perPage: 1,
-                autoplay: true,
-                interval: 4000,
-                pauseOnHover: true,
-                pauseOnFocus: true,
-                arrows: true,
-                pagination: true,
-                speed: 800,
-                drag: true,
-                keyboard: true
-            }).mount();
-
-            // FAQ Accordion
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const faqItem = this.parentElement;
-                    const answer = this.nextElementSibling;
-                    const icon = this.querySelector('.faq-icon');
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    
-                    // Close all other FAQs
-                    faqQuestions.forEach(otherQuestion => {
-                        if (otherQuestion !== question) {
-                            otherQuestion.parentElement.classList.remove('active');
-                            otherQuestion.nextElementSibling.style.maxHeight = null;
-                            otherQuestion.querySelector('.faq-icon').textContent = '+';
-                            otherQuestion.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    
-                    // Toggle current FAQ
-                    if (!isExpanded) {
-                        faqItem.classList.add('active');
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        icon.textContent = '−';
-                        this.setAttribute('aria-expanded', 'true');
-                    } else {
-                        faqItem.classList.remove('active');
-                        answer.style.maxHeight = null;
-                        icon.textContent = '+';
-                        this.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="assets/js/main.js" defer></script>
     <script src="assets/js/hidden_url.js" defer></script>
 
 </body>
