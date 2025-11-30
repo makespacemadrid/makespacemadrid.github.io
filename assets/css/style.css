@@ -243,6 +243,7 @@ ol {
     font-weight: bold;
     font-size: 2rem;
     margin-top: 0.5rem;
+    color: var(--primary-color);
 }
 
 .sub-price {
