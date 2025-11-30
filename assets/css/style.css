@@ -119,14 +119,25 @@ h2::after {
     left: 0;
     right: 0;
     text-align: center;
-    color: var(--primary-color);
     background: rgba(0, 0, 0, 0.7);
     padding: 1rem 2rem;
     margin: 1.5rem;
     border-radius: 4px;
+}
+
+.slide-title {
+    color: var(--primary-color);
     font-size: 1.2rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.slide-description {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 1.4;
 }
 
 /* Customize Splide arrows */
@@ -154,9 +165,16 @@ h2::after {
 
 @media (max-width: 768px) {
     .slide-caption {
-        font-size: 1rem;
         padding: 0.75rem 1rem;
         margin: 1rem;
+    }
+    
+    .slide-title {
+        font-size: 1rem;
+    }
+    
+    .slide-description {
+        font-size: 0.8rem;
     }
 }
 
