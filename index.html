@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta name="description"
         content="Makespace Madrid es un espacio colaborativo para makers, hackers y creativos tecnológicos en Madrid.">
+    <link rel="stylesheet" href="assets/css/splide.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -33,61 +34,89 @@
                     <br>
                     (Metro: Tetuán)
                 </div>
-                <div class="carousel-marquee" aria-label="Fotografías del Makespace Madrid">
-                    <div class="carousel-track">
-                        <img src="assets/images/photos/taller1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/taller2.JPG" class="carousel-image">
-                        <img src="assets/images/photos/electronica1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/3d1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/3d2.JPG" class="carousel-image">
-                        <img src="assets/images/photos/3d3.JPG" class="carousel-image">
-                        <img src="assets/images/photos/3d4.JPG" class="carousel-image">
-                        <img src="assets/images/photos/cnc1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/laser1.JPG" class="carousel-image">
-                        <img src="assets/images/photos/laser2.JPG" class="carousel-image">
-                        <img src="assets/images/photos/laser3.JPG" class="carousel-image">
+                <section class="splide" aria-label="Fotografías del Makespace Madrid">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/taller1.JPG" alt="Taller 1">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Espacio para trabajar en tus proyectos</div>
+                                    <div class="slide-description">Evita molestar a tu familia con el ruido del taladro o el olor del soldador.</div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/taller2.JPG" alt="Taller 2">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Zona de taller</div>
+                                    <div class="slide-description">Ahórrate tener que comprar herramientas que solo vas a usar una vez.</div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/electronica1.JPG" alt="Electrónica 1">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Banco de electrónica</div>
+                                    <div class="slide-description">Soldadores, estaño, osciloscopio, multímetro, fuente de alimentación... todo lo que necesitas.</div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/3d1.JPG" alt="Impresora 3D 1">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Impresoras 3D de filamento</div>
+                                    <div class="slide-description">Trae tu filamento e imprime!</div>
+                                </div>
+                            </li>
+                            <!-- <li class="splide__slide">
+                                <img src="assets/images/photos/3d2.JPG" alt="Impresora 3D 2">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Dolore magna aliqua</div>
+                                    <div class="slide-description">Múltiples impresoras disponibles para los miembros</div>
+                                </div>
+                            </li> -->
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/3d3.JPG" alt="Impresora 3D 3">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Impresoras 3D de resina</div>
+                                    <div class="slide-description">Altísima calidad de impresión para figuras y modelos complejos.</div>
+                                </div>
+                            </li>
+                            <!-- <li class="splide__slide">
+                                <img src="assets/images/photos/3d4.JPG" alt="Impresora 3D 4">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Veniam quis nostrud</div>
+                                    <div class="slide-description">Altísima calidad de impresión para figuras y modelos complejos.</div>
+                                </div>
+                            </li> -->
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/cnc1.JPG" alt="CNC 1">
+                                <div class="slide-caption">
+                                    <div class="slide-title">CNC</div>
+                                    <div class="slide-description">Talla piezas o realiza agujeros en madera o plástico.</div>
+                                </div>
+                            </li>
+                            <!-- <li class="splide__slide">
+                                <img src="assets/images/photos/laser1.JPG" alt="Láser 1">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Nisi ut aliquip ex</div>
+                                    <div class="slide-description">Cortadora láser para corte y grabado</div>
+                                </div>
+                            </li> -->
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/laser2.JPG" alt="Láser 2">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Cortadora láser</div>
+                                    <div class="slide-description">Precisión en corte de diversos materiales.</div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="assets/images/photos/laser3.JPG" alt="Láser 3">
+                                <div class="slide-caption">
+                                    <div class="slide-title">Láser de precisión para PCB</div>
+                                    <div class="slide-description">Del CAD al PCB funcional en el mismo día, sin externalizar ni esperas.</div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="container">
-                <h2>La asociación</h2>
-                <p>Makespace Madrid (CIF G-86721941), fundada el 15 de abril de 2013, es una asociación sin ánimo de
-                    lucro que busca empoderar a las personas para que lleven a cabo sus propios proyectos. La existencia
-                    de esta asociación tiene como fines:</p>
-                <ul>
-                    <li>Difundir la <a href="https://youtu.be/94_uaafCR0w" target="_blank">cultura maker</a>, entendida
-                        como un conjunto de prácticas basadas en el «hágalo por sí mismo» y la experimentación en los
-                        procesos de creación y fabricación digital.</li>
-                    <li>Fomentar el encuentro de personas creativas e inventivas, por todos los medios posibles, para
-                        favorecer las sinergias y la colaboración entre ellas.</li>
-                    <li>Promover y divulgar las nuevas tecnologías, la innovación y el prototipado industrial, bases
-                        para el desarrollo futuro del país, entre personas de todas las edades y condiciones.</li>
-                    <li>Establecer vínculos nacionales e internacionales con entidades con objetivos afines, para
-                        alentar estos mismos principios a una escala más global.</li>
-                    <li>Favorecer la creación de grupos de trabajo multidisciplinares que generen soluciones novedosas
-                        en base a sus experiencias individuales previas.</li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <div class="container">
-                <h2>¿Cómo funciona?</h2>
-                <p>La asociación y el espacio están mantenidos y gestionados por los propios miembros en su tiempo
-                    libre. Cada miembro, tras un periodo de prueba y el apoyo de otros miembros, obtiene una llave del
-                    espacio para poder acceder a cualquier hora del día y usar las herramientas en su interior. Hasta
-                    obtener la llave, el nuevo miembro puede acceder al espacio libremente siempre que otro miembro con
-                    llave haya abierto el espacio.
-                    Cada miembro paga una cuota de</p>
-                <div class="price">
-                    40€/mes*
-                </div>
-                <div class="sub-price">
-                    *30 €/mes si eres estudiante o desempleado
-                </div>
-                <p>La cuota es únicamente para mantener el espacio (alquiler, luz, gas, productos de limpieza, etc.) y
-                    dar cierta estabilidad a la asociación.</p>
+                </section>
             </div>
         </section>
         <section>
@@ -111,6 +140,37 @@
                     <li><a href="https://www.instagram.com/makespacemadrid/">Instagram.</a></li>
                     <li><a href="https://www.facebook.com/makespacemadrid/">Facebook.</a></li>
                 </ul>
+                
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div style="margin-top:1rem;" class="elfsight-app-ca731195-a273-4126-9605-2bfb48c7a3af" data-elfsight-app-lazy></div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2>¿Necesitas ver más?</h2>
+                <p>Echa un ojo a nuestra wiki pública para inspirarte con proyectos que replicar o colaborar, o ver qué estamos haciendo: </p>
+                <div style="text-align: center;">
+                    <a href="https://docmost.mksmad.org/share/xpnopz8wc7/p/wiki-make-space-madrid-1NZkyV4NMO" target="_blank">
+                        <img style="max-height:100px;margin:30px" src="assets/images/wiki_icon.png" alt="Wiki Makespace Madrid">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2>¡Únete!</h2>
+                <p>Aprende a materializar tus ideas y reparar tus dispositivos, inspírate conociendo a gente que comparte tus aficiones, comparte tus conocimientos con la comunidad y fomenta la cultura maker, o simplemente apóyanos para que sigamos existiendo por solo:</p>
+                <div class="price">
+                    40€/mes*
+                </div>
+                <div class="sub-price">
+                    *30 €/mes si eres estudiante o estás en situación de desempleo
+                </div>
+                <p>La cuota es únicamente para mantener el espacio (alquiler, luz, gas, productos de limpieza, etc.) y
+                    dar cierta estabilidad a la asociación.</p>
+                <div style="color: var(--text-color);" class="price">
+                    ¡Ven a visitarnos y apúntate!
+                </div>
             </div>
         </section>
         <section id="contacto">
@@ -118,21 +178,152 @@
                 <h2>Contacto</h2>
                 <p>Únete a nuestro grupo abierto de Telegram (no es necesario ser miembro de la asociación) haciendo
                     click o escaneando el QR,
-                    o escríbenos al <a href="" id="email-link">email</a>.</p>
+                    escríbenos al <a href="" id="email-link">email</a>, o ven a visitarnos cualquier martes a las 19:00 al espacio.</p>
                 <div style="text-align: center;">
                     <a href="" id="telegram-link">
                         <img alt="Telegram QR" height="200px" width="200px" src="assets/images/qr.jpg">
                     </a>
                 </div>
-                <p>o ven a visitarnos cualquier martes a las 19:00 al espacio.</p>
+                <h3 style="margin-top: 3rem; text-align: center;">Colaboraciones institucionales</h3>
+                <p>¿Eres una institución educativa, empresa o entidad que quiere colaborar con nosotros? ¿Te gustaría que participemos en tu evento y demos alguna charla?
+                    ¡Escríbenos al <a href="" id="email-link">email</a> y estaremos encantados de colaborar!</p>
             </div>
         </section>
+        <section id="faq">
+            <div class="container">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Por qué existe Makespace Madrid?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Makespace Madrid (CIF G-86721941), fundada el 15 de abril de 2013, es una asociación sin ánimo de
+                            lucro que busca empoderar a las personas para que lleven a cabo sus propios proyectos. La existencia
+                            de esta asociación tiene como fines:</p>
+                        <ul>
+                            <li>Difundir la <a href="https://youtu.be/94_uaafCR0w" target="_blank">cultura maker</a>, entendida
+                                como un conjunto de prácticas basadas en el «hágalo por sí mismo» y la experimentación en los
+                                procesos de creación y fabricación digital.</li>
+                            <li>Fomentar el encuentro de personas creativas e inventivas, por todos los medios posibles, para
+                                favorecer las sinergias y la colaboración entre ellas.</li>
+                            <li>Promover y divulgar las nuevas tecnologías, la innovación y el prototipado industrial, bases
+                                para el desarrollo futuro del país, entre personas de todas las edades y condiciones.</li>
+                            <li>Establecer vínculos nacionales e internacionales con entidades con objetivos afines, para
+                                alentar estos mismos principios a una escala más global.</li>
+                            <li>Favorecer la creación de grupos de trabajo multidisciplinares que generen soluciones novedosas
+                                en base a sus experiencias individuales previas.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Necesito ser miembro para visitar el espacio?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, puedes venir a visitarnos cualquier martes a las 19:00 sin ser miembro. También puedes asistir a nuestros eventos abiertos. Si quieres tener acceso regular al espacio y sus herramientas, entonces deberás hacerte miembro.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Si soy miembro, puedo ir acceder a cualquier hora?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Cada miembro, tras un periodo de prueba y el apoyo de otros miembros, obtiene una llave del
+                                espacio para poder acceder a cualquier hora del día y usar las herramientas en su interior. Hasta
+                                obtener la llave, el nuevo miembro puede acceder al espacio libremente siempre que otro miembro con
+                                llave haya abierto el espacio.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Necesito experiencia previa?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No es necesario tener experiencia previa. Somos una comunidad colaborativa donde las personas con más experiencia ayudan a quienes se inician a aprender. Sin embargo, si no tienes experiencia, sí que te pediremos que cuentes con la asistencia de alguien de la comunidad durante tu primer uso.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Cómo se mantiene el espacio y la asociación?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>La asociación y el espacio están mantenidos y gestionados por sus propios miembros en su tiempo libre. Se realizan reuniones mensuales para hablar de los temas de la asociación y también cada mes se realiza el Hack the Space. En el Hack the Space, se limpia, reorganiza, arregla y mejora el espacio codo con codo a la vez que pasamos un buen rato en comunidad.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
     <footer>
         <p>&copy; 2025 Makespace Madrid.</p>
     </footer>
-    <script src="assets/js/carousel.js" defer></script>
-        <script src="assets/js/hidden_url.js" defer></script>
+    <script src="assets/js/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Splide('.splide', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 4000,
+                pauseOnHover: true,
+                pauseOnFocus: true,
+                arrows: true,
+                pagination: true,
+                speed: 800,
+                drag: true,
+                keyboard: true
+            }).mount();
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('.faq-icon');
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all other FAQs
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question) {
+                            otherQuestion.parentElement.classList.remove('active');
+                            otherQuestion.nextElementSibling.style.maxHeight = null;
+                            otherQuestion.querySelector('.faq-icon').textContent = '+';
+                            otherQuestion.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    
+                    // Toggle current FAQ
+                    if (!isExpanded) {
+                        faqItem.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.textContent = '−';
+                        this.setAttribute('aria-expanded', 'true');
+                    } else {
+                        faqItem.classList.remove('active');
+                        answer.style.maxHeight = null;
+                        icon.textContent = '+';
+                        this.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="assets/js/hidden_url.js" defer></script>
 
 </body>
 
