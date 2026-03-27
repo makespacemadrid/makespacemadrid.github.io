@@ -1,11 +1,13 @@
-function sendEmail() {
+function sendEmail(e) {
+    e.preventDefault();
     const x = 'info';
     const y = 'makespacemadrid';
     const emailAddress = `${x}@${y}.org`;
     window.location.href = `mailto:${emailAddress}`;
 }
 
-function openTelegramLink() {
+function openTelegramLink(e) {
+    e.preventDefault();
     const x = 'makespacemadridorg';
     const telegramUrl = `https://t.me/${x}`;
     window.open(telegramUrl, '_blank');
