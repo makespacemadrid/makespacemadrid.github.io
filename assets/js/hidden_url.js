@@ -1,5 +1,5 @@
 function sendEmail() {
-    const x = '';
+    const x = 'info';
     const y = 'makespacemadrid';
     const emailAddress = `${x}@${y}.org`;
     window.location.href = `mailto:${emailAddress}`;
@@ -12,8 +12,7 @@ function openTelegramLink() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const email = document.querySelector('#email-link');
+    document.querySelectorAll('.email-link').forEach(el => el.onclick = sendEmail);
     const telegram = document.querySelector('#telegram-link');
-    email.onclick = sendEmail;
     telegram.onclick = openTelegramLink;
 });
