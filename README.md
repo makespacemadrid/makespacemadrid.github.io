@@ -50,3 +50,22 @@ y después abriendo [http://localhost:8000](http://localhost:8000).
 
 5. Ve a GitHub y crea una PR desde tu rama hacia `main`
 6. Pide que alguien revise y apruebe la PR
+
+## Docker
+
+Al hacer merge a `main`, un GitHub Action publica la imagen `ghcr.io/makespacemadrid/makespacemadrid.github.io` (`latest` y por commit), para poder alojar la web fuera de GitHub Pages.
+
+Para ejecutar la imagen publicada:
+
+```sh
+docker run -d -p 8080:80 --restart unless-stopped ghcr.io/makespacemadrid/makespacemadrid.github.io:latest
+```
+
+Para probar tus cambios en local construyendo la imagen desde el repositorio:
+
+```sh
+docker build -t makespace-web .
+docker run --rm -p 8080:80 makespace-web
+```
+
+y después abre [http://localhost:8080](http://localhost:8080).
