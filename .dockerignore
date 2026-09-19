@@ -1,0 +1,9 @@
+.git
+.github
+.vscode
+.DS_Store
+*.md
+*.py
+*.sh
+Dockerfile
+.dockerignore
