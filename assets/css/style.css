@@ -256,6 +256,11 @@ a {
     color: var(--primary-color);
 }
 
+/* Legal pages (e.g. rgpd.html) */
+.legal p {
+    margin-bottom: 1rem;
+}
+
 /* FAQ Section */
 .faq-container {
     max-width: 800px;

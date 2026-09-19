@@ -16,5 +16,5 @@ function openTelegramLink(e) {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.email-link').forEach(el => el.onclick = sendEmail);
     const telegram = document.querySelector('#telegram-link');
-    telegram.onclick = openTelegramLink;
+    if (telegram) telegram.onclick = openTelegramLink;
 });
